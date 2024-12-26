@@ -99,6 +99,8 @@ body {
     max-height: 100px; 
 }
 
+
+
 h2 {
     margin: 0;
     padding: 8px;
@@ -115,7 +117,7 @@ h1 {
     text-shadow: 0 0 0px lime, 0 0 10px lime;
 }
 
-h1, h2 {
+h1, h2, h4{
     font-family: 'Roboto Mono', monospace;
 }
 
