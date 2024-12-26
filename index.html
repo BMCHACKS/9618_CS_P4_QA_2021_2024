@@ -7,36 +7,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>9618 CS P4 - Question/Answer Bank</h1>
+    <canvas id="matrix"></canvas>
+    <div class="terminal" id="terminal">
+        <div id="output"></div>
+        <input type="text" id="input" autofocus />
+    </div>
+    <div class="container" id="container" style="display: none;">
+        <h1>9618 CS P4 Q/A</h1>
     <ul>
-        <h2>2024 - No Winter Variants Yet!</h2>
-        <!-- 2024 PAPERS  -->
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2024-May-June/9618_s24_qp_41.pdf" target="_blank">9618_s24_qp_41</a> - <a href="files/2024/9618_s24_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2024/9618_s24_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2024/9618_s24_qp_41/Question_3.py" download>Answer 3</a></li> -->
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2024-May-June/9618_s24_qp_42.pdf" target="_blank">9618_s24_qp_42</a> - <a href="files/2024/9618_s24_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2024/9618_s24_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2024/9618_s24_qp_42/Question_3.py" download>Answer 3</a></li> -->
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2024-May-June/9618_s24_qp_43.pdf" target="_blank">9618_s24_qp_43</a> - <a href="files/2024/9618_s24_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2024/9618_s24_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2024/9618_s24_qp_43/Question_3.py" download>Answer 3</a></li>
-        <!-- 2023 PAPERS -->
-        <h2>2023</h2>
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-May-June/9618_s23_qp_41.pdf" target="_blank">9618_s23_qp_41</a> - <a href="files/2023/9618_s23_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_s23_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_s23_qp_41/Question_3.py" download>Answer 3</a></li>
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-May-June/9618_s23_qp_42.pdf" target="_blank">9618_s23_qp_42</a> - <a href="files/2023/9618_s23_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_s23_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_s23_qp_42/Question_3.py" download>Answer 3</a></li> -->
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-May-June/9618_s23_qp_43.pdf" target="_blank">9618_s23_qp_43</a> - <a href="files/2023/9618_s23_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_s23_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_s23_qp_43/Question_3.py" download>Answer 3</a></li> -->
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-Oct-Nov/9618_w23_qp_41.pdf" target="_blank">9618_w23_qp_41</a> - <a href="files/2023/9618_w23_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_w23_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_w23_qp_41/Question_3.py" download>Answer 3</a></li>
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-Oct-Nov/9618_w23_qp_42.pdf" target="_blank">9618_w23_qp_42</a> - <a href="files/2023/9618_w23_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_w23_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_w23_qp_42/Question_3.py" download>Answer 3</a></li>
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-Oct-Nov/9618_w23_qp_43.pdf" target="_blank">9618_w23_qp_43</a> - <a href="files/2023/9618_w23_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_w23_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_w23_qp_43/Question_3.py" download>Answer 3</a></li> -->
-        <!-- 2022 PAPERS -->
-        <h2>2022</h2>
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-May-June/9618_s22_qp_41.pdf" target="_blank">9618_s22_qp_41</a> - <a href="files/2022/9618_s22_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_s22_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_s22_qp_41/Question_3.py" download>Answer 3</a></li>
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-May-June/9618_s22_qp_42.pdf" target="_blank">9618_s22_qp_42</a> - <a href="files/2022/9618_s22_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_s22_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_s22_qp_42/Question_3.py" download>Answer 3</a></li>
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-May-June/9618_s22_qp_43.pdf" target="_blank">9618_s22_qp_43</a> - <a href="files/2022/9618_s22_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_s22_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_s22_qp_43/Question_3.py" download>Answer 3</a></li> -->
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-Oct-Nov/9618_w22_qp_41.pdf" target="_blank">9618_w22_qp_41</a> - <a href="files/2022/9618_w22_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_w22_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_w22_qp_41/Question_3.py" download>Answer 3</a></li>
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-Oct-Nov/9618_w22_qp_42.pdf" target="_blank">9618_w22_qp_42</a> - <a href="files/2022/9618_w22_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_w22_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_w22_qp_42/Question_3.py" download>Answer 3</a></li> -->
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-Oct-Nov/9618_w22_qp_43.pdf" target="_blank">9618_w22_qp_43</a> - <a href="files/2022/9618_w22_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_w22_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_w22_qp_43/Question_3.py" download>Answer 3</a></li> -->
-        <!-- 2021 PAPERS -->
-        <h2>2021</h2>
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-May-June/9618_s21_qp_41.pdf" target="_blank">9618_s21_qp_41</a> - <a href="files/2021/9618_s21_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_s21_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_s21_qp_41/Question_3.py" download>Answer 3</a></li> -->
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-May-June/9618_s21_qp_42.pdf" target="_blank">9618_s21_qp_42</a> - <a href="files/2021/9618_s21_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_s21_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_s21_qp_42/Question_3.py" download>Answer 3</a></li>
-        <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-May-June/9618_s21_qp_43.pdf" target="_blank">9618_s21_qp_43</a> - <a href="files/2021/9618_s21_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_s21_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_s21_qp_43/Question_3.py" download>Answer 3</a></li>
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-Oct-Nov/9618_w21_qp_41.pdf" target="_blank">9618_w21_qp_41</a> - <a href="files/2021/9618_w21_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_w21_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_w21_qp_41/Question_3.py" download>Answer 3</a></li> -->
-        <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-Oct-Nov/9618_w21_qp_42.pdf" target="_blank">9618_w21_qp_42</a> - <a href="files/2021/9618_w21_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_w21_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_w21_qp_42/Question_3.py" download>Answer 3</a></li> -->
+        <div class="heading" id="heading1">
+            <div class="scrolling-text">
+                <h2>2024</h2>
+                <ul class="links">
+                    <!-- 2024 PAPERS  -->
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2024-May-June/9618_s24_qp_41.pdf" target="_blank">9618_s24_qp_41</a> - <a href="files/2024/9618_s24_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2024/9618_s24_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2024/9618_s24_qp_41/Question_3.py" download>Answer 3</a></li> -->
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2024-May-June/9618_s24_qp_42.pdf" target="_blank">9618_s24_qp_42</a> - <a href="files/2024/9618_s24_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2024/9618_s24_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2024/9618_s24_qp_42/Question_3.py" download>Answer 3</a></li> -->
+                    <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2024-May-June/9618_s24_qp_43.pdf" target="_blank">9618_s24_qp_43</a> - <a href="files/2024/9618_s24_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2024/9618_s24_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2024/9618_s24_qp_43/Question_3.py" download>Answer 3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="heading" id="heading2">
+            <div class="scrolling-text">
+                <!-- 2023 PAPERS -->
+                <h2>2023</h2>
+                <ul class="links">
+                    <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-May-June/9618_s23_qp_41.pdf" target="_blank">9618_s23_qp_41</a> - <a href="files/2023/9618_s23_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_s23_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_s23_qp_41/Question_3.py" download>Answer 3</a></li>
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-May-June/9618_s23_qp_42.pdf" target="_blank">9618_s23_qp_42</a> - <a href="files/2023/9618_s23_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_s23_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_s23_qp_42/Question_3.py" download>Answer 3</a></li> -->
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-May-June/9618_s23_qp_43.pdf" target="_blank">9618_s23_qp_43</a> - <a href="files/2023/9618_s23_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_s23_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_s23_qp_43/Question_3.py" download>Answer 3</a></li> -->
+                    <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-Oct-Nov/9618_w23_qp_41.pdf" target="_blank">9618_w23_qp_41</a> - <a href="files/2023/9618_w23_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_w23_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_w23_qp_41/Question_3.py" download>Answer 3</a></li>
+                    <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-Oct-Nov/9618_w23_qp_42.pdf" target="_blank">9618_w23_qp_42</a> - <a href="files/2023/9618_w23_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_w23_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_w23_qp_42/Question_3.py" download>Answer 3</a></li>
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2023-Oct-Nov/9618_w23_qp_43.pdf" target="_blank">9618_w23_qp_43</a> - <a href="files/2023/9618_w23_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2023/9618_w23_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2023/9618_w23_qp_43/Question_3.py" download>Answer 3</a></li> -->
+                </ul>
+            </div>
+        </div>
+    <div class="heading" id="heading3">
+        <div class="scrolling-text">
+            <!-- 2022 PAPERS -->
+            <h2>2022</h2>
+            <ul class="links">
+                <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-May-June/9618_s22_qp_41.pdf" target="_blank">9618_s22_qp_41</a> - <a href="files/2022/9618_s22_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_s22_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_s22_qp_41/Question_3.py" download>Answer 3</a></li>
+                <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-May-June/9618_s22_qp_42.pdf" target="_blank">9618_s22_qp_42</a> - <a href="files/2022/9618_s22_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_s22_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_s22_qp_42/Question_3.py" download>Answer 3</a></li>
+                <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-May-June/9618_s22_qp_43.pdf" target="_blank">9618_s22_qp_43</a> - <a href="files/2022/9618_s22_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_s22_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_s22_qp_43/Question_3.py" download>Answer 3</a></li> -->
+                <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-Oct-Nov/9618_w22_qp_41.pdf" target="_blank">9618_w22_qp_41</a> - <a href="files/2022/9618_w22_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_w22_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_w22_qp_41/Question_3.py" download>Answer 3</a></li>
+                <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-Oct-Nov/9618_w22_qp_42.pdf" target="_blank">9618_w22_qp_42</a> - <a href="files/2022/9618_w22_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_w22_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_w22_qp_42/Question_3.py" download>Answer 3</a></li> -->
+                <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2022-Oct-Nov/9618_w22_qp_43.pdf" target="_blank">9618_w22_qp_43</a> - <a href="files/2022/9618_w22_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2022/9618_w22_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2022/9618_w22_qp_43/Question_3.py" download>Answer 3</a></li> -->
+            </ul>
+        </div>
+    </div>
+        <div class="heading" id="heading4">
+            <div class="scrolling-text">
+                <!-- 2021 PAPERS -->
+                <h2>2021</h2>
+                <ul class="links">
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-May-June/9618_s21_qp_41.pdf" target="_blank">9618_s21_qp_41</a> - <a href="files/2021/9618_s21_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_s21_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_s21_qp_41/Question_3.py" download>Answer 3</a></li> -->
+                    <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-May-June/9618_s21_qp_42.pdf" target="_blank">9618_s21_qp_42</a> - <a href="files/2021/9618_s21_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_s21_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_s21_qp_42/Question_3.py" download>Answer 3</a></li>
+                    <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-May-June/9618_s21_qp_43.pdf" target="_blank">9618_s21_qp_43</a> - <a href="files/2021/9618_s21_qp_43/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_s21_qp_43/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_s21_qp_43/Question_3.py" download>Answer 3</a></li>
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-Oct-Nov/9618_w21_qp_41.pdf" target="_blank">9618_w21_qp_41</a> - <a href="files/2021/9618_w21_qp_41/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_w21_qp_41/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_w21_qp_41/Question_3.py" download>Answer 3</a></li> -->
+                    <!-- <li><a href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/2021-Oct-Nov/9618_w21_qp_42.pdf" target="_blank">9618_w21_qp_42</a> - <a href="files/2021/9618_w21_qp_42/Question_1.py" download>Answer 1</a> - <a href="files/2021/9618_w21_qp_42/Question_2.py" download>Answer 2</a> - <a href="files/2021/9618_w21_qp_42/Question_3.py" download>Answer 3</a></li> -->
+                </ul>
+            </div>
+        </div>
     </ul>
     <div class="footer">
         <!-- <div class="marquee">
@@ -44,5 +74,6 @@
             <span>BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC BMC</span>
         </div> -->
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
