@@ -100,7 +100,6 @@ body {
 }
 
 
-
 h2 {
     margin: 0;
     padding: 8px;
@@ -119,6 +118,7 @@ h1 {
 
 h1, h2, h4{
     font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
 }
 
 ul {
@@ -130,3 +130,15 @@ ul {
 li {
     margin-bottom: 10px; 
 }
+
+footer{
+    font-family: 'Courier New', Courier, monospace;
+    color: lime;
+    text-decoration: none;
+    transition: text-shadow 0.3s ease;
+}
+
+footer:hover{
+    text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime;
+}
+
