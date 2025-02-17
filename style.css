@@ -89,14 +89,15 @@ body {
     opacity: 0;
     max-height: 0;
     list-style-type: none;
-    padding: 0;
+    padding: 10;
     margin: 10;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
+    transition: opacity 0.3s ease, max-height 0.7s ease;
+    overflow: visible;
 }
 
 .heading:hover .links {
     opacity: 1;
-    max-height: 100px; 
+    max-height: 500px;
 }
 
 
