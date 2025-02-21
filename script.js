@@ -34,9 +34,6 @@ const terminalInput = document.getElementById('input');
 const container = document.getElementById('container');
 const terminal = document.getElementById('terminal');
 
-//function initTerminal() {
-//    terminalOutput.textContent += 'Press Enter to Continue: ';
-//}
 terminal.style.display = 'none';
 container.style.display = 'block';
 
@@ -81,4 +78,4 @@ container.addEventListener('mouseleave', () => {
     container.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });
 
-//initTerminal();
+
