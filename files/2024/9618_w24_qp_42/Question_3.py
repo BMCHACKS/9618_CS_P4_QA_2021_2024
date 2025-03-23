@@ -22,7 +22,7 @@ def SortScores(array):
     for x in range(len(array)):
         swap = False
         for y in range(len(array)-1-x):
-            if (array[y][1] == array[y+1][1] and array[y][2] < array[y+1][2]) or array[y][1] < array[y+1][1]:
+            if (int(array[y][1]) == int(array[y+1][1]) and int(array[y][2]) < int(array[y+1][2])) or int(array[y][1]) < int(array[y+1][1]):
                 array[y], array[y+1] = array[y+1], array[y]
                 swap = True
         if not swap: break
