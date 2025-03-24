@@ -46,7 +46,7 @@ FreeNode = 0 # DECLARE FreeNode : INTEGER
 
 for _ in range(10): 
     ArrayNodes, RootPointer, FreeNode = AddNode(ArrayNodes, RootPointer, FreeNode)
-    PrintAll()
+PrintAll()
 
 
 InOrder(ArrayNodes, RootPointer)
