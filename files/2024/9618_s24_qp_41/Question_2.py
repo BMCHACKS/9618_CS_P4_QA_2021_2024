@@ -1,65 +1,75 @@
 class Tree:
     def __init__(self, TreeName, HeightGrowth, MaxHeight, MaxWidth, Evergreen):
-        # PRIVATE self.__TreeName : STRING
-        # PRIVATE self.__HeightGrowth : INTEGER
-        # PRIVATE self.__MaxHeight : INTEGER
-        # PRIVATE self.__MaxWidth : INTEGER
-        # PRIVATE self.__Evergreen : STRING
-        self.__TreeName = TreeName
-        self.__HeightGrowth = HeightGrowth
-        self.__MaxHeight = MaxHeight
-        self.__MaxWidth = MaxWidth
-        self.__Evergreen = Evergreen
+        self.__TreeName = TreeName # PRIVATE DECLARE TreeName : STRING
+        self.__HeightGrowth = HeightGrowth # PRIVATE DECLARE HeightGrowth : INTEGER
+        self.__MaxHeight = MaxHeight # PRIVATE DECLARE MaxHeight : INTEGER
+        self.__MaxWidth = MaxWidth # PRIVATE DECLARE MaxWidth : INTEGER
+        self.__Evergreen = Evergreen # PRIVATE DECLARE Evergreen : STRING
 
     def GetTreeName(self): return self.__TreeName
     def GetGrowth(self): return self.__HeightGrowth
     def GetMaxHeight(self): return self.__MaxHeight
     def GetMaxWidth(self): return self.__MaxWidth
     def GetEvergreen(self): return self.__Evergreen
-    
+
+
 def ReadData():
-    Trees = []
-    try: 
+    TempTree = [] # Tree
+    try:
         file = open("Trees.txt", 'r')
         for line in file:
-            name, growth, mheight, mwidth, evergreen = line.rstrip().split(',')
-            Trees.append(Tree(name, int(growth), int(mheight), int(mwidth), evergreen))
-        return Trees        
+            name, growth, height, width, green = line.rstrip().split(',')
+            TempTree.append(Tree(name, int(growth), int(height), int(width), green))
+        file.close()
     except IOError:
-        print("file not found :/")    
+        print("File not found!")
 
-def PrintTrees(Treeobj):
-    TreeName, MaxHeight, MaxWidth =  Treeobj.GetTreeName(), Treeobj.GetMaxHeight(), Treeobj.GetMaxWidth()
-    HeightGrowth, EverGreen = Treeobj.GetGrowth(), Treeobj.GetEvergreen()
-    main_msg = f"{TreeName} has a maximum height {MaxHeight} a maximum width {MaxWidth} and grows {HeightGrowth} cm a year."
-    if EverGreen == "Yes":
-        print(f"{main_msg} It does not lose its leaves.")
+    return TempTree
+
+
+def PrintTrees(TreeObj):
+    name = TreeObj.GetTreeName()
+    growth = TreeObj.GetGrowth()
+    height = TreeObj.GetMaxHeight()
+    width = TreeObj.GetMaxWidth()
+    eg = TreeObj.GetEvergreen()
+
+    main_msg = f"{name} has a maximum height {height} a maximum width {width} and grows {growth} cm a year."
+    if eg == "Yes":
+        main_msg = f"{main_msg} It does not lose its leaves."
     else:
-        print(f"{main_msg} It does lose its leaves.")
+        main_msg = f"{main_msg} It loses its leaves each year."
 
-def ChooseTree(TreeArray):
-    NewTreeArray = []
-    max_h = int(input("Max Height: "))
-    max_w = int(input("Max Width: "))
-    egreen = input("Evergreen [Yes|No]: ")
-    for tree in TreeArray:
-        if tree.GetMaxHeight() <= max_h and tree.GetMaxWidth() <= max_w and tree.GetEvergreen() == egreen: NewTreeArray.append(tree)
+    print(main_msg)
 
-    for tree in NewTreeArray: PrintTrees(tree)
-    
-    name = input("Enter name of Tree to pick: ")
-    height = int(input("Enter original height: "))
 
-    for tree in NewTreeArray:
-        if name == tree.GetTreeName():
-            time = (tree.GetMaxHeight()-height) / tree.GetGrowth()
-            print(f"The tree will take {time} years to reach its maximum height of {tree.GetMaxHeight()}")
-            break
-    
+def ChooseTree(TreeArr):
+    max_height = int(input("Enter maximum height the tree can be in cm: "))
+    max_width = int(input("Enter maximum width the tree can be in cm: "))
+    evergreen = input("Enter if the tree should be evergreen or not evergreen (Yes/No): ")
+
+    valid_trees = []
+    for TreeObj in TreeArr:
+        if TreeObj.GetMaxHeight() <= max_height and TreeObj.GetMaxWidth() <= max_width and TreeObj.GetEvergreen() == evergreen:
+            valid_trees.append(TreeObj)
+
+    if len(valid_trees) == 0:
+        print("No Tree Matches the Set Requirements!")
+    else:
+        for TreeObj in valid_trees:
+            PrintTrees(TreeObj)
+
+        name = input("Enter the name of one the Trees you would like to buy: ")
+        start_height = int(input("Enter the height of the Tree when bought: "))
+        for TreeObj in valid_trees:
+            if TreeObj.GetTreeName() == name:
+                max_height = TreeObj.GetMaxHeight()
+                growth = TreeObj.GetGrowth()
+        years = (max_height - start_height) / growth
+        print(f"The tree will take {years} years to reach its maximum height of {max_height}cm.")
 
 # main
 
-Trees = ReadData()
-PrintTrees(Trees[0])
-
-ChooseTree(Trees)
+TreeArray = ReadData()
+PrintTrees(TreeArray[0])
+ChooseTree(TreeArray)
