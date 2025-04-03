@@ -1,38 +1,53 @@
-
 def Enqueue(data):
     global QueueHead, QueueTail
-    if QueueTail != 19:
-        if QueueHead == -1: QueueHead = 0
-        QueueTail += 1
-        QueueData[QueueTail] = data
-        return True
-    return False
+    if QueueTail == 19:
+        return False
+
+    QueueTail += 1
+    QueueData[QueueTail] = data
+    if QueueHead == -1:
+        QueueHead = 0
+
+    return True
 
 def Dequeue():
     global QueueHead, QueueTail
-    if QueueHead == -1: return "false"
-    data = QueueData[QueueHead]
+    if QueueHead == -1:
+        return "false"
+
+    return_data = QueueData[QueueHead]
     QueueHead += 1
-    if QueueHead > QueueTail: QueueHead, QueueTail = -1, -1
-    return data
+
+    if QueueHead > QueueTail:
+        QueueHead = -1
+        QueueTail = -1
+
+    return return_data
 
 def StoreItems():
-    invalid_items = 0
-    for _ in range(20):
-        val = input("Enter 7-digits: ")
-        sum = int(val[0]) + int(val[2]) + int(val[4]) + (int(val[1])*3) + (int(val[3])*3) + (int(val[5])*3)
-        check_digit = sum // 10
-        val_check_digit = 10 if val[6] == "X" else int(val[6]) 
-        if val_check_digit == check_digit:
-            val_check_digit = 'X' if val_check_digit == 10 else str(val[6])
-            response = Enqueue(val_check_digit)
-            match response:
-                case False : print("[ERROR] val not added")
-                case True : print("[SUCCESS] val added to Queue")
+    invalid = 0
+    for _ in range(10):
+        check_string = input("Enter the string to check: ")
+        original_digit = check_string[6]
+        check_digit = int(check_string[1])*3 + int(check_string[3])*3 + int(check_string[5])*3
+        check_digit += int(check_string[0]) + int(check_string[2]) + int(check_string[4])
+        check_digit = check_digit // 10
+        if check_digit == 10:
+            check_digit = "X"
+
+        check_string = check_string[:6] + str(check_digit)
+
+        if check_string[6] == original_digit:
+            response = Enqueue(check_string[:6])
+            if response:
+                print("Data was added successfully!")
+            else:
+                print("Queue is full!")
         else:
-            print("[ERROR] Check Digit Not Valid!")
-            invalid_items += 1
-            
+            invalid += 1
+
+    print(f"The number of invalid inputs were: {invalid}")
+
 
 # main
 
@@ -42,8 +57,7 @@ QueueTail = -1
 
 StoreItems()
 response = Dequeue()
-if response == 'false':
-    print("The Queue is empty!")
+if response == "false":
+    print("Queue was empty!")
 else:
-    print(f"Dequeud: {response}")
-
+    print(f"Dequed: {response}")
