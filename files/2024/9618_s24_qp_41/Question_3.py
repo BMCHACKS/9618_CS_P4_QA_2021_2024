@@ -60,4 +60,4 @@ response = Dequeue()
 if response == "false":
     print("Queue was empty!")
 else:
-    print(f"Dequed: {response}")
+    print(f"Dequeued: {response}")
